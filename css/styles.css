@@ -1,0 +1,73 @@
+body {
+  background-color: #191A19;
+  color: #D8E9A8;
+  margin: 0;
+  font-family: "Montserrat", "Oswald", "Nunito";
+}
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  column-gap: 20px; 
+  padding: 20px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 20px;
+  column-gap: 20px;
+  padding: 20px;
+
+  background-color: rgba(25, 26, 25, .8);
+  backdrop-filter: blur(15px);
+
+  border-radius: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.header-section {
+
+  background-color: #191A19;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+nav {
+display: flex;
+flex-direction: row;
+justify-content: center;
+column-gap: 20px;
+row-gap: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1E5128;
+}
+
+.btn-secondary {
+  background-color: #4E9F3D;
+}
+
+.home-main-section {
+  background-image: url("../images/gpu0.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
+}
