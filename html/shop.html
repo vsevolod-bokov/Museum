@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souvenir Shop</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="Vsevolod Bokov">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%7COswald%7CNunito">
+  <script src="../js/script.js"></script>
+</head>
+<body>
+  <div class="header-section">
+    <div class="container">
+      <header>
+        <nav>
+        <!-- button code from cavnas -->
+        <button onclick="location.href='../index.html'">Home</button>
+        <button onclick="location.href='staff.html'">Staff</button>
+        <button onclick="location.href='collections.html'">Collections</button>
+        <button onclick="location.href='shop.html'">Shop</button>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+<section class="shop-hero-section">
+  <div class="container collections-hero-div">
+    <h1>Souvenir Shop</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="shop-container">
+
+      <!-- shop items code from template -->
+      <!-- tool tip is done with title attributes on items' parent div -->
+      <!-- BEGIN SINGLE ITEM BLOCK-->
+      <div class="souvenir-item" data-id="item001" title="Replica of museum artifact Moonlight Rattle of Kheret">
+        <img src="../images/shop/rattle.png" alt="Image of shop item Moonlight Rattle of Kheret" onclick="openModal(this)">
+        <h3>Moonlight Rattle of Kheret</h3>
+        <p>From the Archaeological Collection. Crafted in replica from wood and ceramic beads, inspired by an original found in the Kheret Delta, Egypt. Believed to be used in night ceremonies to accompany moon chants.</p>
+        <p><strong>Price:</strong> $42.00</p>
+        <button onclick="addToCart('item001')">Add Moonlight Rattle of Kheret to Cart</button>
+      </div>
+      <!-- END SINGLE ITEM BLOCK -->
+
+      <!-- BEGIN SINGLE ITEM BLOCK-->
+      <div class="souvenir-item" data-id="item002" title="Replica of museum artifact Storykeeper’s Bead Necklace">
+        <img src="../images/shop/necklace.png" alt="Image of shop item Storykeeper’s Bead Necklace" onclick="openModal(this)">
+        <h3>Storykeeper’s Bead Necklace</h3>
+        <p>From the Anthropological Collection. Resin reproduction of shell, stone, and bone beads, modeled after an artifact found in the coastal settlement of Ivarra, used by oral historians to mark significant events.</p>
+        <p><strong>Price:</strong> $36.50</p>
+        <button onclick="addToCart('item002')">Add Storykeeper’s Bead Necklace to Cart</button>
+      </div>
+      <!-- END SINGLE ITEM BLOCK -->
+
+      <!-- BEGIN SINGLE ITEM BLOCK-->
+      <div class="souvenir-item" data-id="item003" title="Replica of museum artifact River Dance Ankle Bells">
+        <img src="../images/shop/bells.png" alt="Image of shop item River Dance Ankle Bells" onclick="openModal(this)">
+        <h3>River Dance Ankle Bells</h3>
+        <p>From the Archaeological Collection. Replica in brass and leather, inspired by ankle bells excavated from the ruins of Dalmari, worn by ceremonial dancers in seasonal river blessings. Their rhythmic chimes were said to echo the sound of flowing water.</p>
+        <p><strong>Price:</strong> $29.75</p>
+        <button onclick="addToCart('item003')">Add River Dance Ankle Bells to Cart</button>
+      </div>
+      <!-- END SINGLE ITEM BLOCK -->
+
+      <!-- BEGIN SINGLE ITEM BLOCK-->
+      <div class="souvenir-item" data-id="item004" title="Replica of museum artifact Artisan’s Reed Cutter">
+        <img src="../images/shop/cutter.png" alt="Image of shop item Artisan’s Reed Cutter" onclick="openModal(this)">
+        <h3>Artisan’s Reed Cutter</h3>
+        <p>From the Archaeological Collection. Wooden and bronze replica of a reed-cutting tool excavated from the riverside workshops of Dalenport. Used by ancient craftspeople to trim reeds for flutes and pipe instruments.</p>
+        <p><strong>Price:</strong> $25.40</p>
+        <button onclick="addToCart('item004')">Add Artisan’s Reed Cutter to Cart</button>
+      </div>
+      <!-- END SINGLE ITEM BLOCK -->
+
+    </div>
+
+
+  <!-- MODAL - code from template -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modal-image" src="../images/backgrounds/shop.png" alt="Image of our souvenir shop.">
+    </div>
+  </div>
+  <!-- END MODAL - code from template -->
+
+
+  </div>
+</section>
+
+<section>
+      <div class="container disclaimer-div">
+        <h2>Disclaimer:</h2>
+        <p>This is a fictitious website created purely for academic purposes. An AI created the fictional artifacts on this page, including all their text, images, and price.</p>
+      </div>
+    </section>
+
+</body>
+</html>
