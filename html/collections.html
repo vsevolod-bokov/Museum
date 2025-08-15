@@ -22,14 +22,244 @@
 
         <nav>
         <!-- button code from cavnas -->
-        <button class="btn-secondary" onclick="location.href='#'">Archeology</button>
-        <button class="btn-secondary" onclick="location.href='#'">Anthropology</button>
+        <button class="btn-secondary" onclick="showSection('archeology')">Archeology</button>
+        <button class="btn-secondary" onclick="showSection('anthropology')">Anthropology</button>
         <button class="btn-secondary" onclick="location.href='#'">History</button>
         </nav>
       </header>
     </div>
   </div>
+  <section class="collections-hero-section">
+    <div class="container collections-hero-div">
+      <h1>Museum Collections</h1>
+    </div>
+  </section>
+  
   <main>
+    <section id="archeology" class="collection-section" style="display:none;">
+      <h2>Archeology Artifacts</h2>
+      <div class="collection-item container">
+        <h3>The Solstice Lyre of Mykessa</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/lyre.png" alt="Image of the solstice lyre of mykessa" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Carved cedar wood frame with bronze tuning pegs, remnants of gut strings.</p>
+            <p><b>Weight + Dimensions: </b>62 cm tall, 40 cm wide, harp-like shape weighing 2.3 kg.</p>
+            <p><b>Properties: </b>Lightweight, resonant wood; bronze heavily patinated green; faint traces of red pigment on the frame.</p>
+            <p><b>Age: </b>~2,800 years old, carbon dated from wood core samples.</p>
+            <p><b>Preservation: </b>Partial—frame intact, but most strings and decorative inlays missing.</p>
+            <p><b>Found In: </b>Hilltop sanctuary near Mykessa (fictitious Aegean island), coordinates 36.742° N, 25.110° E.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Ceremonial music performance during solstice rites.</p>
+            <p><b>Use Evidence: </b>Grooves on bridge from repeated string friction; microscopic traces of olive oil used to preserve strings.</p>
+            <p><b>Manufacture Style: </b>Chisel marks consistent with Aegean bronze-age woodworking tools; inlays suggest imported craftsmanship influences from Anatolia.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found alongside fragments of a ceremonial robe and a small bronze sun-disc.</p>
+            <p><b>Burial Context: </b>Placed deliberately in a rock niche within a temple altar foundation.</p>
+            <p><b>Symbolism: </b>Carved spirals possibly representing solar cycles; red pigment perhaps symbolizing life force or rebirth.</p>
+            <p><b>Comparison: </b>Similar in construction to the “Lyre of Ur” but with distinctive Aegean geometric motifs.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="collection-item container">
+        <h3>The Rain Caller Flute</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/flute.png" alt="Image of the rain caller flute" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Hollowed-out bone of an extinct mountain deer, decorated with shell inlay.</p>
+            <p><b>Weight + Dimensions: </b>28 cm long, 3 cm diameter, 0.4 kg; cylindrical with six finger holes.</p>
+            <p><b>Properties: </b>Smooth, ivory-like bone surface; delicate shell inlays forming wave motifs.</p>
+            <p><b>Age: </b>~4,100 years old, inferred from layer context and associated pottery typology.</p>
+            <p><b>Preservation: </b>Pristine; all finger holes intact, no visible cracks.</p>
+            <p><b>Found In: </b>Limestone cave at Serat Plateau, coordinates 14.555° N, 73.442° E.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Ritual calling of rain or seasonal fertility rites.</p>
+            <p><b>Use Evidence: </b>Slight wear on finger holes; internal residue analysis shows traces of plant resins, possibly from mouth sealing or sound alteration.</p>
+            <p><b>Manufacture Style: </b>Drilled holes show precision boring technique; shell inlay adhered with early resin-based glue.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found with charred seed offerings and a clay figurine of a water deity.</p>
+            <p><b>Burial Context: </b>Placed on a raised stone platform deep within the cave, with ritual items surrounding it.</p>
+            <p><b>Symbolism: </b>Wave motifs and aquatic shells strongly suggest water symbolism and rain invocation.</p>
+            <p><b>Comparison: </b>Functionally similar to Andean quenas, but with unique coastal decorative motifs.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="collection-item container">
+        <h3>The Twin Moons Drum</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/drum.png" alt="Image of the twin moons drum" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Stretched gazelle hide over a double-chambered ceramic base, painted with mineral pigments.</p>
+            <p><b>Weight + Dimensions: </b>45 cm tall, 25 cm wide, two joined spherical chambers, weight 5.2 kg.</p>
+            <p><b>Properties: </b>Resonant ceramic body, drumheads taut but brittle with age, faded but visible pigment patterns.</p>
+            <p><b>Age: </b>~1,900 years old, carbon dated from hide and thermoluminescence dating of ceramic.</p>
+            <p><b>Preservation: </b>Complete; minor cracking on one drumhead, pigment faded but discernible.</p>
+            <p><b>Found In: </b>Desert necropolis of Kal-Hareth, coordinates 20.229° N, 29.533° E.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Funerary processions or moon-worship rituals.</p>
+            <p><b>Use Evidence: </b>Hide worn smooth in central striking zones; traces of ochre powder possibly applied during performances.</p>
+            <p><b>Manufacture Style: </b>Ceramic body wheel-thrown; moon motifs hand-painted; hide secured with braided sinew cord.</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found in burial chamber of a female priestess alongside lunar-themed jewelry.</p>
+            <p><b>Burial Context: </b>Positioned at the head of the sarcophagus, suggesting ritual importance.</p>
+            <p><b>Symbolism: </b>Painted crescents and concentric circles may reference lunar cycles or duality beliefs.</p>
+            <p><b>Comparison: </b>Comparable to Nubian double-drums but with distinctive ceramic craftsmanship rather than wooden frames.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+       
+    <section id="anthropology" class="collection-section" style="display:none;">
+      <h2>Anthropology Artifacts</h2>
+      <div class="collection-item container">
+        <h3>Ceremonial Bone Adornments of the Sky Chanter Clan</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/bones.png" alt="Image of ceremonial bone adornments of the Sky Chanter Clan" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Hollowed bird bones, copper inlays, plant-based dyes</p>
+            <p><b>Weight + Dimensions: </b>Average 18–25 cm in length; light weight; cylindrical with tapered ends</p>
+            <p><b>Properties: </b>Hollow, polished surfaces; delicate etched markings filled with pigment</p>
+            <p><b>Age: </b>~3,800 years old (carbon-dated bone samples)</p>
+            <p><b>Preservation: </b>Partial set — 7 of original 12 pieces remain intact</p>
+            <p><b>Found In: </b>The Erythraean Highlands; GPS coordinates redacted for preservation</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Neck or arm adornments worn by lead ritual singers</p>
+            <p><b>Use Evidence: </b>Surface polishing from repeated handling; pigment wear in high-contact areas</p>
+            <p><b>Manufacture Style: </b>Etched with copper-tipped tools; pigment made from crushed ochre and wild indigo</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found in close proximity to a broken shell rattle and burned incense fragments</p>
+            <p><b>Burial Context: </b>Recovered from a partially collapsed ceremonial platform structure</p>
+            <p><b>Symbolism: </b>Spiral and star motifs suggest a connection to celestial worship and seasonal music festivals</p>
+            <p><b>Comparison: </b>Similar in concept to adornments found in the Andean highlands, but with distinct star-pattern etching</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="collection-item container">
+        <h3>The Dancer’s Sandals of Qarru</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/sandals.png" alt="Image of the dancer's sandals of Qarru" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Woven reed fiber soles, leather straps, decorative bronze studs</p>
+            <p><b>Weight + Dimensions: </b>Sole length ~24 cm; lightweight; flat sole with slight toe curve</p>
+            <p><b>Properties: </b>Flexible but worn; some straps frayed; studs tarnished but intact</p>
+            <p><b>Age: </b>~2,600 years old (inferred from associated layer and artifact typology)</p>
+            <p><b>Preservation: </b>One sandal complete, the other missing heel section</p>
+            <p><b>Found In: </b>Delta site of Dhras-Qarru, near a preserved river shrine</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Performance footwear for ritual dances accompanied by music</p>
+            <p><b>Use Evidence: </b>Compressed fiber where ball of foot rested; abrasion on bronze studs from rhythmic foot tapping</p>
+            <p><b>Manufacture Style: </b>Woven in a figure-eight braid pattern; studs hand-cast using sand molds</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found with ceramic cups and charred fish bones, possibly remnants of a feast</p>
+            <p><b>Burial Context: </b>Inside a riverside pavilion, floor covered in patterned tiles</p>
+            <p><b>Symbolism: </b>Bronze studs arranged in moon-phase sequence — possibly tied to performance timing or ritual cycles</p>
+            <p><b>Comparison: </b>Comparable to ceremonial dance sandals found in Bronze Age Crete, but with unique lunar arrangement</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="collection-item container">
+        <h3>The Voicekeeper’s Clay Mask</h3>
+        <div class="collection-item-grid">
+
+          <img src="/images/collections/mask.png" alt="Image of the voicekeeper's clay mask" class="artifact-img">
+      
+          <div class="field-group">
+            <h4>Physical Info</h4>
+            <p><b>Material: </b>Fired clay with hematite-based red slip, shell inlay for eyes</p>
+            <p><b>Weight + Dimensions: </b>28 cm tall, 19 cm wide; roughly 1.8 kg; oval facial shape with elongated chin</p>
+            <p><b>Properties: </b>Slightly brittle edges; smooth interior; ornate exterior with etched swirls and shell inlays</p>
+            <p><b>Age: </b>~4,200 years old (thermoluminescence dating)</p>
+            <p><b>Preservation: </b>Nearly pristine — only minor edge chipping</p>
+            <p><b>Found In: </b>Cave complex at Mount Khaleen, ceremonial chamber</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Use and Function</h4>
+            <p><b>Purpose: </b>Worn by “Voicekeeper” — the ceremonial custodian of musical history and oral tradition</p>
+            <p><b>Use Evidence: </b>Smooth inner surface from repeated skin contact; faint traces of plant resin near edges (likely adhesive or scent)</p>
+            <p><b>Manufacture Style: </b>Mold-formed clay base, hand-etched designs, pigment applied pre-firing for durability</p>
+          </div>
+      
+          <div class="field-group">
+            <h4>Cultural Context</h4>
+            <p><b>Found With: </b>Found alongside a stone lyre tuning key and animal-hide scroll fragments</p>
+            <p><b>Burial Context: </b>Inside a chamber with carved alcoves, possibly an archive for musical relics</p>
+            <p><b>Symbolism: </b>Spiral lines radiating from mouth suggest the spreading of words, songs, and ritual chants</p>
+            <p><b>Comparison: </b>Shares design features with masks from the Nok culture, but with an emphasis on oral symbolism rather than dance</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <section>
+      <div class="container disclaimer-div">
+        <h2>Disclaimer:</h2>
+        <p>This is a fictitious website created purely for academic purposes. Fictional artifacts on this page, including their text and images, were created by AI.</p>
+      </div>
+    </section>
+
   </main>
+  <script>
+    function showSection(section) {
+      const sections = document.querySelectorAll('.collection-section');
+      sections.forEach(s => s.style.display = 'none');
+      document.getElementById(section).style.display = 'flex'; // replaced block with flex
+    }
+  </script>
 </body>
 </html>

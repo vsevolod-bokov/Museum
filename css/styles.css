@@ -9,16 +9,25 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  margin: 20px 0px 20px 0px;
   align-items: center;
+  align-content: center;
 }
 
 .container {
   max-width: 1440px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   column-gap: 20px; 
   padding: 20px;
+  margin: 0px 0px;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
 }
 
 .info-box {
@@ -98,7 +107,7 @@ div.staff-individual-grid-odd {
   background-color: #D5CEA3;
   color:#3C2A21;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 div.staff-individual-grid-even {
@@ -110,13 +119,13 @@ div.staff-individual-grid-even {
   background-color: #D5CEA3;
   color:#3C2A21;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .staff-image {
   width: 100%;
   border-style: none;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .staff-info-div {
   width: 100%;
@@ -126,11 +135,8 @@ div.staff-individual-grid-even {
 }
 
 .disclaimer-div {
-  padding: 20px;
   background-color: #D5CEA3;
   color:#3C2A21;
-  border-style: none;
-  border-radius: 20px;
 }
 
 hr {
@@ -139,3 +145,42 @@ hr {
   height: 2px;
   width: 100%;
 }
+
+.collections-hero-section {
+  background-image: url("../images/backgrounds/museum.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+.collections-hero-div {
+  min-height: 400px;
+}
+
+
+.collection-section {
+
+}
+
+.collection-item {
+  background-color: #D5CEA3;
+  color:#3C2A21;
+}
+
+.collection-item-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: auto;
+ gap: 10px;
+}
+
+.artifact-img {
+max-width:300px;
+border-radius: 10px;
+}
+
+.field-group {
+
+}
+
