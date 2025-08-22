@@ -5,6 +5,10 @@ body {
   font-family: "Montserrat", "Oswald", "Nunito";
 }
 
+div {
+  box-sizing: border-box;
+}
+
 /* menu */
 
 .header-section {
@@ -40,6 +44,7 @@ button {
 /* containers */
 
 section {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -56,7 +61,7 @@ section {
   row-gap: 20px;
   column-gap: 20px; 
   padding: 20px;
-  margin: 0px 0px;
+  margin: 0px 20px;
 
   justify-content: center;
   align-items: center;
@@ -92,14 +97,26 @@ h1 {
 }
 
 .home-main-section {
-  background-image: url("../images/backgrounds/the-new-york-public-library-8sfx-QtB9hQ-unsplash.jpg");
+  background-image: url("../images/backgrounds/museum-home.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center center;
 }
 
 /* staff page */
+
+.staff-hero-section {
+  background-image: url("../images/backgrounds/staff.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center center;
+}
+
+.staff-hero-div {
+  min-height: 500px;
+}
 
 .staff-roster {
   display: flex;
@@ -164,13 +181,13 @@ hr {
 .collections-hero-section {
   background-image: url("../images/backgrounds/museum.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-position: center center;
 }
 
 .collections-hero-div {
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .collection-section {
@@ -203,7 +220,7 @@ border-radius: 10px;
 .shop-hero-section {
   background-image: url("../images/backgrounds/shop.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-position: center center;
 }
@@ -283,7 +300,7 @@ border-radius: 10px;
 .modal-content {
   margin: 10% auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #D5CEA3;
   width: 60%;
   border-radius: 8px;
   /* use in future? 
@@ -303,4 +320,21 @@ border-radius: 10px;
   font-size: 2rem; /* increased size */
   cursor: pointer;
   color: #444;
+}
+
+/* collections modals */
+#modal-body {
+  background-color: #D5CEA3;
+  color:#3C2A21;
+}
+
+.modal-meta-info {
+  
+}
+
+.collection-item-histories-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  gap: 10px;
 }

@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collections - Musuem of Ancient Music</title>
+  <link rel="icon" type="image/x-icon" href="../images/Favicon.png">
   <meta name="robots" content="noindex, nofollow">
   <meta name="author" content="Vsevolod Bokov">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%7COswald%7CNunito">
+  <script src="../js/script.js"></script>
 </head>
 <body>
   <div class="header-section">
@@ -25,7 +27,7 @@
         <!-- button code from cavnas -->
         <button class="btn-secondary" onclick="showSection('archeology')">Archeology</button>
         <button class="btn-secondary" onclick="showSection('anthropology')">Anthropology</button>
-        <button class="btn-secondary" onclick="location.href='#'">History</button>
+        <button class="btn-secondary" onclick="showSection('histories')">Histories</button>
         </nav>
       </header>
     </div>
@@ -33,17 +35,20 @@
   <section class="collections-hero-section">
     <div class="container collections-hero-div">
       <h1>Museum Collections</h1>
+      <p><i>Click a category above to see collections by group.</i></p>
     </div>
   </section>
   
   <main>
+    <!-- Archeology Collection Section -->
     <section id="archeology" class="collection-section" style="display:none;">
       <h2>Archeology Artifacts</h2>
-      <div class="collection-item container">
+      <p>Click on an artifact's image to learn more.</p>
+      <div class="container collection-item">
         <h3>The Solstice Lyre of Mykessa</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/lyre.png" alt="Image of the solstice lyre of mykessa" class="artifact-img">
+          <img src="../images/collections/lyre.png" alt="Image of the solstice lyre of mykessa" class="artifact-img open-modal"   data-modal-target="#modal-text-arch1">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -77,7 +82,7 @@
         <h3>The Rain Caller Flute</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/flute.png" alt="Image of the rain caller flute" class="artifact-img">
+          <img src="../images/collections/flute.png" alt="Image of the rain caller flute" class="artifact-img open-modal"   data-modal-target="#modal-text-arch2">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -111,7 +116,7 @@
         <h3>The Twin Moons Drum</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/drum.png" alt="Image of the twin moons drum" class="artifact-img">
+          <img src="../images/collections/drum.png" alt="Image of the twin moons drum" class="artifact-img open-modal"   data-modal-target="#modal-text-arch3">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -142,13 +147,16 @@
       </div>
     </section>
        
+    <!-- Anthropology Collection Section -->
+
     <section id="anthropology" class="collection-section" style="display:none;">
       <h2>Anthropology Artifacts</h2>
+      <p>Click on an artifact's image to learn more.</p>
       <div class="collection-item container">
         <h3>Ceremonial Bone Adornments of the Sky Chanter Clan</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/bones.png" alt="Image of ceremonial bone adornments of the Sky Chanter Clan" class="artifact-img">
+          <img src="../images/collections/bones.png" alt="Image of ceremonial bone adornments of the Sky Chanter Clan" class="artifact-img open-modal"   data-modal-target="#modal-text-anth1">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -182,7 +190,7 @@
         <h3>The Dancer’s Sandals of Qarru</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/sandals.png" alt="Image of the dancer's sandals of Qarru" class="artifact-img">
+          <img src="../images/collections/sandals.png" alt="Image of the dancer's sandals of Qarru" class="artifact-img open-modal"   data-modal-target="#modal-text-anth2">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -216,7 +224,7 @@
         <h3>The Voicekeeper’s Clay Mask</h3>
         <div class="collection-item-grid">
 
-          <img src="../images/collections/mask.png" alt="Image of the voicekeeper's clay mask" class="artifact-img">
+          <img src="../images/collections/mask.png" alt="Image of the voicekeeper's clay mask" class="artifact-img open-modal"   data-modal-target="#modal-text-anth3">
       
           <div class="field-group">
             <h4>Physical Info</h4>
@@ -245,22 +253,361 @@
 
         </div>
       </div>
+    </section>
 
+    <!-- Histories Section -->
+
+    <section id="histories" class="collection-section" style="display:none;">
+      <h2>Artifact Histories</h2>
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/lyre.png" alt="Image of the solstice lyre of mykessa" class="artifact-img">
+        <div>
+          <h3>The Solstice Lyre of Mykessa</h3>
+          <h4>Cedar Wood, Bronze Pegs, Remnants of Gut String</h4>
+          <h4>~2,800 years</h4>
+          <h4>Hilltop Sanctuary, Mykessa (Aegean)</h4>
+          <p>
+            <b>Item Description:</b>
+            This lyre, measuring 62 cm tall and 40 cm wide, was carved from lightweight cedar with bronze tuning pegs now heavy with green patina. Its frame is intact though its strings and decorative inlays have vanished. Microscopic analysis reveals grooves where strings once cut into the bridge and faint traces of red pigment.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            Recovered from a stone niche in a sanctuary aligned with midsummer sunrise, the lyre likely served in solstice rites. Evidence suggests it was played during renewal ceremonies, its sound linking community ritual to celestial cycles. Found alongside fragments of a ceremonial robe and a bronze sun-disc, the instrument speaks to both sacred performance and symbolic power.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            Rather than viewing this only as an object, cultural semiotics asks us to reconstruct the worldview that gave it life. The lyre may not have been played for entertainment, but as a sonic bridge between human and cosmos, sustaining communal memory and ritual order. The traces of olive oil used to preserve strings reveal ongoing care—an intimacy between people and instrument.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            In form it recalls the “Lyre of Ur,” yet the Aegean geometric motifs mark it as distinctly local, suggesting cultural borrowing and adaptation across regions.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            Symbolic meanings—such as the spirals carved into its frame—must be read carefully. They may suggest solar cycles, but they could also carry meanings lost to us.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments, curated by Jason Strummer with interpretive framework by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/flute.png" alt="Image of The Rain Caller Flute" class="artifact-img">
+        <div>
+          <h3>The Rain Caller Flute</h3>
+          <h4>Bone (mountain deer), Shell Inlay, Resin Adhesive</h4>
+          <h4>~4,100 years</h4>
+          <h4>Serat Plateau Cave</h4>
+          <p>
+            <b>Item Description:</b>
+            This flute measures 28 cm in length and 3 cm in diameter, weighing 0.4 kg. Hollowed from deer bone, its surface is polished smooth, adorned with delicate shell inlay forming wave motifs. Six finger holes remain intact with no visible cracks, attesting to its pristine preservation.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            Discovered on a raised stone platform within a limestone cave, this flute was accompanied by charred seed offerings and a figurine of a water deity. Its context strongly suggests use in fertility or rain-invocation ceremonies, connecting agricultural cycles with sacred ritual. Internal residues point to the application of plant resins, possibly altering timbre or sealing air pathways during performance.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            Viewed through a cultural semiotic lens, the Rain Caller Flute was likely not an instrument of entertainment but of communication—its sound joining human communities with natural forces. The wave motifs etched through inlay suggest water’s central role, hinting at a symbolic belief in sound as a summons for rain. To the people of Serat Plateau, music may have been both practical and cosmological: ensuring harvests while affirming bonds with divine or elemental forces.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            In function, it resembles Andean quenas—end-blown flutes likewise tied to ritual practice—but its decorative vocabulary is coastal, linking it to maritime cultural traditions.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            While contextual evidence is strong, caution is needed: symbolic readings of wave motifs and rain invocation cannot be asserted with certainty, only suggested.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments. Archaeological curation by Jason Strummer; interpretive analysis by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/drum.png" alt="Image of The Twin Moons Drum" class="artifact-img">
+        <div>
+          <h3>The Twin Moons Drum</h3>
+          <h4>Gazelle Hide, Ceramic Body, Mineral Pigment</h4>
+          <h4>~1,900 years</h4>
+          <h4>Kal-Hareth Necropolis</h4>
+          <p>
+            <b>Item Description:</b>
+            This double-chambered drum measures 45 cm tall and 25 cm wide, weighing 5.2 kg. Its spherical ceramic body was wheel-thrown and painted with mineral-based pigments, now faded but showing crescent moon designs. The drumheads, crafted of stretched gazelle hide, are brittle with age yet remain taut. Braided sinew cords secure the hide in place.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            The drum was found at the head of a female priestess’s sarcophagus, alongside lunar-themed jewelry. Its context strongly suggests it served in funerary processions and rituals tied to lunar cosmology. Wear marks on the hide indicate repeated striking in central zones, while ochre traces suggest powder may have been applied ceremonially to enhance sound or meaning.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            In its time, the drum was likely more than an instrument—it was a ritual companion. The painted crescents connect it to cycles of the moon, while its placement near the priestess underscores its guiding role in death and rebirth. Through a symbolic lens, this drum embodied duality: life and death, presence and absence, silence and sound.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            Comparable Nubian double-drums share structural features, yet the Mykessan example’s ceramic craftsmanship is distinctive, showing adaptation of regional materials and symbolic language.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            Although context and symbolism suggest lunar ritual function, meanings attributed to the crescents may vary. We must acknowledge the possibility of multiple interpretations beyond the lunar cycle.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments. Archaeological curation by Jason Strummer; interpretive framework by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/bones.png" alt="Image of Ceremonial Bone Adornments of the Sky Chanter Clan" class="artifact-img">
+        <div>
+          <h3>Ceremonial Bone Adornments of the Sky Chanter Clan</h3>
+          <h4>Hollowed Bird Bone, Copper Inlay, Plant-Based Pigment</h4>
+          <h4>~3,800 years</h4>
+          <h4>Erythraean Highlands</h4>
+          <p>
+            <b>Item Description:</b>
+            This partial set of seven adornments ranges between 18–25 cm in length, cylindrical and tapered, hollowed from bird bone. Surfaces are polished smooth, etched with star motifs filled with pigment from ochre and indigo. Inlays of copper remain in places, now tarnished. Originally, the set likely consisted of twelve pieces; five have been lost.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            Recovered from a collapsed ceremonial platform in the highlands, these adornments were likely worn by ritual singers. Their placement alongside a broken shell rattle and incense fragments suggests performance use in star-aligned ceremonies. Surface wear indicates repeated handling, reinforcing their active use rather than decorative storage.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            Through a symbolic lens, these adornments mark identity and authority. Worn on the body, they embodied not only personal ornament but also communal recognition: the singer’s role as mediator between community and cosmos. The etched star motifs suggest orientation to celestial cycles, framing music as an extension of night sky ritual.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            Comparable adornments exist in Andean highlands, though those lack the distinctive star etching. This suggests shared practices of singer adornment across cultures, with localized symbolic expression.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            While star motifs appear self-evident, their exact meaning—cosmological, calendrical, or protective—remains uncertain. Interpretive care requires us to hold open multiple possibilities rather than fix meaning prematurely.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments. Anthropological curation by Michael Humerus; interpretive analysis by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/sandals.png" alt="Image of The Dancer’s Sandals of Qarru" class="artifact-img">
+        <div>
+          <h3>The Dancer’s Sandals of Qarru</h3>
+          <h4>Reed Fiber, Leather Straps, Bronze Studs</h4>
+          <h4>~2,600 years</h4>
+          <h4>Riverside Pavilion, Dhras-Qarru Delta</h4>
+          <p>
+            <b>Item Description:</b>
+            This artifact consists of two sandals: one complete, the other missing its heel. Soles measure approximately 24 cm in length, woven in a figure-eight braid from reed fibers. Leather straps are frayed but intact in places. Bronze studs remain fixed in decorative sequence, tarnished but still visible.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            The sandals were uncovered on a tiled floor of a riverside pavilion near a preserved shrine. Their context, alongside ceramic cups and charred fish bones, indicates ritual feasting. Wear evidence—compressed soles and abraded studs—points to repeated use during ceremonial dancing. These performances were likely tied to seasonal river blessings and lunar observances, embodying rhythm as a communal offering.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            From a symbolic standpoint, these sandals signify more than footwear. They transform the dancer’s body into an instrument of ritual. The studs arranged in lunar sequence suggest intentional design, reinforcing alignment with celestial cycles. To the community, each step may have carried both agricultural prayer and spiritual affirmation, binding earth and sky through movement.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            Comparable to Bronze Age Cretan dance sandals, though unique in lunar stud arrangement. This distinction reveals local adaptation of widespread ritual practices.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            While context strongly suggests ceremonial use, the precise choreography or symbolism cannot be fully reconstructed. Interpretive caution reminds us that cultural meanings are layered and multiple.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments. Anthropological curation by Michael Humerus; interpretive commentary by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="collection-item container">
+      <div class="collection-item-histories-grid">
+        <img src="../images/collections/mask.png" alt="Image of The Voicekeeper’s Clay Mask" class="artifact-img">
+        <div>
+          <h3>The Voicekeeper’s Clay Mask</h3>
+          <h4>Fired Clay, Hematite Slip, Shell Inlay</h4>
+          <h4>~4,200 years</h4>
+          <h4>Mount Khaleen Cave Complex</h4>
+          <p>
+            <b>Item Description:</b>
+            This mask measures 28 cm tall by 19 cm wide, weighing 1.8 kg. Mold-formed clay base with hematite red slip finish. Shell inlays mark the eyes, with etched swirls radiating from the mouth. Interior surface is smooth, likely from repeated facial contact. Preservation is nearly pristine, with minor edge chipping.
+            <br>
+            <br>
+            <b>Cultural Use:</b>
+            The mask was discovered in a ceremonial chamber with carved alcoves interpreted as an archive space. Found with a stone lyre tuning key and hide scroll fragments, it points to a role as part of a ritual ensemble. Likely worn by a “Voicekeeper,” a figure tasked with preserving oral tradition and musical heritage, the mask transformed the speaker into a vessel of communal memory. Traces of plant resin near the edges may indicate adhesive or scented preparation during ceremonies.
+            <br>
+            <br>
+            <b>Interpretive Insight:</b>
+            Through a symbolic lens, the mask is more than an ornament. It embodies the act of voice as collective memory, amplifying the individual speaker into a cultural custodian. The swirls etched across its surface suggest sound radiating outward, visualizing the spreading of words and songs. In this worldview, story, music, and ritual were inseparable.
+            <br>
+            <br>
+            <b>Comparative Notes:</b>
+            The mask shares formal features with Nok cultural masks, yet its emphasis differs: less for dance, more for the oral-symbolic act of voice. Its unique context—an archival chamber—reinforces its role as an object of cultural preservation.
+            <br>
+            <br>
+            <b>Cautionary Note on Interpretation:</b>
+            While evidence supports oral custodianship, symbolic interpretations must remain provisional. The precise rituals and spoken content are beyond recovery.
+            <br>
+            <br>
+            <b>On Display Courtesy Of:</b>
+            The Museum of Ancient Musical Instruments. Anthropological curation by Michael Humerus; interpretive commentary by Diane Teller.
+          </p>
+        </div>
+      </div>
+      </div>
+      <p>Return to:</p>
+      <nav>
+        <button class="btn-secondary" onclick="showSection('archeology')">Archeology</button>
+        <button class="btn-secondary" onclick="showSection('anthropology')">Anthropology</button>
+      </nav>
     </section>
     <section>
       <div class="container disclaimer-div">
         <h2>Disclaimer:</h2>
-        <p>This is a fictitious website created purely for academic purposes. An AI created the fictional artifacts on this page, including their text and images.</p>
+        <p>This is a fictitious website created purely for academic purposes. The content in this gallery was entirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. An AI created the fictional artifacts on this page, including their text and images.</p>
       </div>
     </section>
 
   </main>
-  <script>
-    function showSection(section) {
-      const sections = document.querySelectorAll('.collection-section');
-      sections.forEach(s => s.style.display = 'none');
-      document.getElementById(section).style.display = 'flex'; // replaced block with flex
+
+
+  <!-- modal content -->
+   <!-- modal title ID's are not unique due to this code in modal scaffold below: aria-labelledby="modal-title" -->
+<div class="modal-item" id="modal-text-arch1" hidden>
+  <h2 id="modal-title">The Solstice Lyre of Mykessa</h2>
+  <h3 class="modal-meta-info">Cedar and Bronze | Used in Solstice Rites | Found Near Mykessa Island</h3>
+  <p>
+    The Solstice Lyre of Mykessa, carved from cedar and fitted with bronze pegs, speaks to a world where music bound communities to the rhythms of sun and season. Found in a hilltop sanctuary aligned with the midsummer sunrise, this 2,800-year-old lyre was likely played during solstice rites of renewal. Its grooves, pigment traces, and olive-oil residue reveal both care and devotion.
+    <br>
+    <br>
+    Yet meaning is not fixed: for the people of Mykessa, sound was ceremony, history, and identity woven together. When we encounter this lyre, we step into their worldview, glimpsing a culture that marked time not only by the heavens, but through music echoing across stone and sky. In our gallery, it reminds us that instruments are never just objects—they are cultural voices, waiting to be heard again.
+  </p>
+</div>
+
+<div class="modal-item" id="modal-text-arch2" hidden>
+  <h2 id="modal-title">The Rain Caller Flute</h2>
+  <h3 class="modal-meta-info">Deer Bone | Used in Rituals | Found at Serat Plateau</h3>
+  <p>
+    The Rain Caller Flute, carved from the bone of an extinct mountain deer, carries the echoes of a people who sought harmony with the skies. Found deep within the limestone caves of the Serat Plateau, this 4,100-year-old flute lay upon a raised stone platform, surrounded by seed offerings and a figurine of a water deity. Its shell inlays form wave motifs, symbols of flowing water and renewal.
+    <br>
+    <br>
+    The wear on its finger holes and resin traces within suggest careful, repeated use, perhaps in ceremonies calling rain to nourish fields and fertility alike. While we cannot know the precise melodies once played, the flute embodies a community’s hope that sound could converse with nature itself. To hold it in our gaze is to recognize that instruments are not only tools of music but bridges—between people, land, and spirit.
+  </p>
+</div>
+
+<div class="modal-item" id="modal-text-arch3" hidden>
+  <h2 id="modal-title">The Twin Moons Drum</h2>
+  <h3 class="modal-meta-info">Gazelle Hide & Ceramic | Used in Funerary Processions or Rituals | Found in Kal-Hareth</h3>
+  <p>
+    The Twin Moons Drum, crafted nearly 1,900 years ago, brings us into a world where rhythm marked the journey between life and death. Its ceramic base, painted with mineral pigments, supports gazelle-hide drumheads now worn smooth from use. Found at the desert necropolis of Kal-Hareth, it rested at the head of a priestess’s sarcophagus, placed there with lunar jewelry to guide her through cycles of rebirth.
+    <br>
+    <br>
+    The painted crescents and ochre traces suggest its role in night rituals, echoing celestial rhythms. Although its sound is now silent, its presence tells us that music was not merely performance but passage, a means of carrying the living and the dead into alignment with the cosmos. For us today, it is a reminder that instruments are storytellers: material, rhythm, and symbol woven into community, ceremony, and belief.
+  </p>
+</div>
+
+<div class="modal-item" id="modal-text-anth1" hidden>
+  <h2 id="modal-title">Ceremonial Bone Adornments of the Sky Chanter Clan</h2>
+  <h3 class="modal-meta-info">Bird Bones | Worn by Ritual Singers | Found in The Erythraean Highlands</h3>
+  <p>
+    The Ceremonial Bone Adornments of the Sky Chanter Clan invite us to imagine a world where music, ritual, and the stars intertwined. Carved from bird bones nearly 3,800 years ago, these adornments once gleamed with copper inlays and pigments of ochre and indigo. Found on a collapsed ceremonial platform in the Erythraean Highlands, they lay beside incense fragments and a broken shell rattle—traces of a stage where ritual singers marked their identity and role.
+    <br>
+    <br>
+    Each piece shows polish from handling, pigment worn where hands once grasped them. Etched star motifs suggest connection to celestial rites, guiding voices through night ceremonies. While we cannot know the exact songs they accompanied, these adornments speak of music as a social and cosmic force, binding singers to community and sky. In our present, they remind us that adornment is never mere decoration—it is storytelling through material, memory, and ritual presence.
+  </p>
+</div>
+
+<div class="modal-item" id="modal-text-anth2" hidden>
+  <h2 id="modal-title">The Dancer’s Sandals of Qarru</h2>
+  <h3 class="modal-meta-info">Reed Fibers, Leather, and Bronze | Worn for Ritual Dances | Found in Dhras-Qarru</h3>
+  <p>
+    The Dancer’s Sandals of Qarru bring us to a riverside pavilion where music and movement once carried ritual meaning. Woven from reed fibers with leather straps and decorated with bronze studs, these sandals—over 2,600 years old—were found near a shrine at Dhras-Qarru. One sandal is complete, the other damaged, yet both bear the imprint of performance: compressed soles where dancers pressed forward, and studs worn smooth from rhythmic tapping.
+    <br>
+    <br>
+    Associated with feast remains, they tell of ceremonies tied to river blessings and lunar cycles, where dance embodied communal gratitude. Their lunar-arranged studs suggest steps aligned with celestial order. While much is uncertain, their presence affirms that footwear was not just protection, but performance—objects that transformed the body into part of ritual storytelling. For us today, they remind us that dance was a sacred dialogue: between people, water, and the rhythms of time itself.
+  </p>
+</div>
+
+<div class="modal-item" id="modal-text-anth3" hidden>
+  <h2 id="modal-title">The Voicekeeper’s Clay Mask</h2>
+  <h3 class="modal-meta-info">Fired Clay & Hematite | Worn by "Voicekeeper" | Found at Mount Khaleen</h3>
+  <p>
+    The Voicekeeper’s Clay Mask, discovered in a ceremonial chamber at Mount Khaleen, takes us into a world where memory was not written in books but carried in song. Crafted over 4,200 years ago from fired clay coated in a hematite slip and inlaid with shells for eyes, the mask is remarkably preserved. Its smooth interior tells of repeated wear, its etched swirls on the exterior hinting at sound carried outward.
+    <br>
+    <br>
+    Found with a stone lyre tuning key and scroll fragments, the mask belonged to a “Voicekeeper”—a custodian of oral tradition, whose role was to preserve and transmit collective memory. Worn during ritual recitations, it transformed voice into living archive. Though we cannot fully know the words once spoken, the mask reminds us that music and story were not separate but entwined: breath, clay, and memory shaping identity across generations.
+  </p>
+</div>
+
+  <!-- keep your existing overlay + .modal/.modal-content styles -->
+<div class="modal" id="modal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="Close">x</button>
+    <div id="modal-body"></div> <!-- text gets injected inside the div-->
+  </div>
+</div>
+
+<!-- js for modals, got error if code is in script file-->
+<script>
+(function(){
+  const modal      = document.getElementById('modal');
+  const modalBody  = document.getElementById('modal-body');
+  const closeBtn   = modal.querySelector('.close-modal');
+  let lastTrigger  = null;
+
+  function openFrom(selector, trigger){
+    const src = document.querySelector(selector);
+    if (!src) { console.warn('Missing modal content:', selector); return; }
+    modalBody.innerHTML = src.innerHTML;        // inject text HTML
+    modal.style.display = 'block';
+    lastTrigger = trigger || null;
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';    // no scroll under modal
+  }
+
+  function closeModal(){
+    modal.style.display = 'none';
+    modalBody.innerHTML = '';
+    document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  // open on any element with data-modal-target
+  document.addEventListener('click', (e)=>{
+    const trigger = e.target.closest('[data-modal-target]');
+    if (trigger){
+      e.preventDefault();
+      openFrom(trigger.getAttribute('data-modal-target'), trigger);
+      return;
     }
-  </script>
+    if (e.target === modal || e.target.closest('.close-modal')) closeModal();
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+  });
+})();
+</script>
+
+
 </body>
 </html>

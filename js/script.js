@@ -23,4 +23,11 @@ function addToCart(itemId) {
         closeModal();
       }
     }
-// end code from wk5 shop template
+
+
+// show collection groups A + B on click
+function showSection(section) {
+      const sections = document.querySelectorAll('.collection-section');
+      sections.forEach(s => s.style.display = 'none');
+      document.getElementById(section).style.display = 'flex'; // replaced block with flex
+    }
