@@ -1,8 +1,4 @@
-// script code from wk 5 shop template
-function addToCart(itemId) {
-      alert("Added " + itemId + " to cart (functionality to come)");
-      // Future: Push to cart array
-    }
+// shop page - modal script code from wk 5 shop template
 
     function openModal(imgElement) {
       const modal = document.getElementById("modal");
@@ -24,8 +20,7 @@ function addToCart(itemId) {
       }
     }
 
-
-// show collection groups A + B on click
+// collection page - show collection groups A + B on click
 function showSection(section) {
       const sections = document.querySelectorAll('.collection-section');
       sections.forEach(s => s.style.display = 'none');

@@ -10,6 +10,54 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%7COswald%7CNunito">
   <script src="../js/script.js"></script>
+  <script>
+  // cart script
+  //this key links the shop to the cart
+
+      const CART_KEY = 'museumCartV1';
+      
+
+  // This function reads the Cart information and write it to JSON  
+      function readCart() {
+        try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+        catch { return []; }
+      }
+
+      function writeCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      }
+  
+  /*This function is called by the addToCart button the first part reads the dataset contined in the buttons and asssigns the values to variables */
+
+      function addToCart(btn) {
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        const unitPrice = Number(btn.dataset.price);
+        const image = btn.dataset.image;
+
+  /* This part puts all of the individual items and puts them into an object called cart and writes it to LocalStorage   */
+
+        let cart = readCart();
+        const idx = cart.findIndex(it => it.id === id);
+        if (idx >= 0) {
+          cart[idx].qty += 1;
+        } else {
+          cart.push({ id, name, unitPrice, qty: 1, image });
+        }
+        writeCart(cart);
+
+        // Update the item card's qty badge
+
+        const card = btn.closest('.souvenir-item');
+        if (card) {
+          const badge = card.querySelector('.qty-badge');
+          if (badge) {
+            const item = cart.find(it => it.id === id);
+            badge.textContent = item ? `Qty: ${item.qty}` : '';
+          }
+        }
+      }
+  </script>
 </head>
 <body>
   <div class="header-section">
@@ -21,6 +69,7 @@
         <button onclick="location.href='staff.html'">Staff</button>
         <button onclick="location.href='collections.html'">Collections</button>
         <button onclick="location.href='shop.html'">Shop</button>
+        <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart</button> 
         </nav>
       </header>
     </div>
@@ -44,7 +93,15 @@
         <h3>Moonlight Rattle of Kheret</h3>
         <p>From the Archaeological Collection. Crafted in replica from wood and ceramic beads, inspired by an original found in the Kheret Delta, Egypt. Believed to be used in night ceremonies to accompany moon chants.</p>
         <p><strong>Price:</strong> $42.00</p>
-        <button onclick="addToCart('item001')">Add Moonlight Rattle of Kheret to Cart</button>
+        <button
+          onclick="addToCart(this)"
+          data-id="item001"
+          data-name="Moonlight Rattle of Kheret"
+          data-price="42.00"
+          data-image="../images/shop/rattle.png">
+          Add Moonlight Rattle of Kheret to Cart
+        </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
       <!-- END SINGLE ITEM BLOCK -->
 
@@ -54,7 +111,15 @@
         <h3>Storykeeper’s Bead Necklace</h3>
         <p>From the Anthropological Collection. Resin reproduction of shell, stone, and bone beads, modeled after an artifact found in the coastal settlement of Ivarra, used by oral historians to mark significant events.</p>
         <p><strong>Price:</strong> $36.50</p>
-        <button onclick="addToCart('item002')">Add Storykeeper’s Bead Necklace to Cart</button>
+        <button
+          onclick="addToCart(this)"
+          data-id="item002"
+          data-name="Storykeeper’s Bead Necklace"
+          data-price="36.50"
+          data-image="../images/shop/necklace.png">
+          Add Storykeeper’s Bead Necklace to Cart
+        </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
       <!-- END SINGLE ITEM BLOCK -->
 
@@ -64,7 +129,15 @@
         <h3>River Dance Ankle Bells</h3>
         <p>From the Archaeological Collection. Replica in brass and leather, inspired by ankle bells excavated from the ruins of Dalmari, worn by ceremonial dancers in seasonal river blessings. Their rhythmic chimes were said to echo the sound of flowing water.</p>
         <p><strong>Price:</strong> $29.75</p>
-        <button onclick="addToCart('item003')">Add River Dance Ankle Bells to Cart</button>
+        <button
+          onclick="addToCart(this)"
+          data-id="item003"
+          data-name="River Dance Ankle Bells"
+          data-price="29.75"
+          data-image="../images/shop/bells.png">
+          Add River Dance Ankle Bells to Cart
+        </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
       <!-- END SINGLE ITEM BLOCK -->
 
@@ -74,7 +147,15 @@
         <h3>Artisan’s Reed Cutter</h3>
         <p>From the Archaeological Collection. Wooden and bronze replica of a reed-cutting tool excavated from the riverside workshops of Dalenport. Used by ancient craftspeople to trim reeds for flutes and pipe instruments.</p>
         <p><strong>Price:</strong> $25.40</p>
-        <button onclick="addToCart('item004')">Add Artisan’s Reed Cutter to Cart</button>
+        <button
+          onclick="addToCart(this)"
+          data-id="item004"
+          data-name="Artisan’s Reed Cutter"
+          data-price="25.40"
+          data-image="../images/shop/cutter.png">
+          Add Artisan’s Reed Cutter to Cart
+        </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
       <!-- END SINGLE ITEM BLOCK -->
 

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Museum Cart</title>
+  <link rel="icon" type="image/x-icon" href="../images/Favicon.png">
+  <meta name="author" content="Vsevolod Bokov">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%7COswald%7CNunito">
+  <script src="../js/script.js"></script>
+  <style>
+    /* minimal on-page styles for clarity; move to your CSS later if you want */
+    main { max-width: 1440px; margin: 0 auto; padding: 16px; }
+    .controls { margin: 8px 0 12px; }
+    .empty { padding: 12px; border: 1px dashed #666; font-style: italic; }
+    pre#summary { background: #D5CEA3; color: #3C2A21; padding: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .actions { margin-top: 12px; display: flex; gap: 8px; }
+  </style>
+</head>
+<body>
+  <div class="header-section">
+    <div class="container">
+      <header>
+        <nav>
+        <!-- button code from cavnas -->
+        <button onclick="location.href='../index.html'">Home</button>
+        <button onclick="location.href='staff.html'">Staff</button>
+        <button onclick="location.href='collections.html'">Collections</button>
+        <button onclick="location.href='shop.html'">Shop</button>
+        <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart</button> 
+        </nav>
+      </header>
+    </div>
+  </div>
+  <section class="cart-hero-section">
+    <div class="container cart-hero-div">
+      <h1>Museum Cart</h1>
+    </div>
+  </section>
+
+  <main>
+    <!-- <div class="item-row" id="item001" hidden>
+      <div id="item001-qty-name"></div>
+      <div id="item001-price"></div>
+      <div id="item001-total"></div>
+      <button onclick="removeItem(item001)">Remove</button>
+    </div>
+
+    <div class="item-row" id="item002" hidden>
+      <div id="item002-qty-name"></div>
+      <div id="item002-price"></div>
+      <div id="item002-total"></div>
+      <button onclick="removeItem(item002)">Remove</button>
+    </div>
+
+    <div class="item-row" id="item003" hidden>
+      <div id="item003-qty-name"></div>
+      <div id="item003-price"></div>
+      <div id="item003-total"></div>
+      <button onclick="removeItem(item003)">Remove</button>
+    </div>
+
+    <div class="item-row" id="item004" hidden>
+      <div id="item004-qty-name"></div>
+      <div id="item004-price"></div>
+      <div id="item004-total"></div>
+      <button onclick="removeItem(item004)">Remove</button>
+    </div> -->
+    <div class="container">
+      <!-- NEW CONTROLS (Cart page only) -->
+    <div class="controls">
+      <label><input type="checkbox" id="memberToggle"> Member Discount (15%)</label>
+    </div>
+
+    <!-- STATES & OUTPUT AREAS -->
+    <div id="emptyMsg" class="empty" hidden>Your cart is empty. Reload page if items dont leave cart upon "remove"</div>
+
+    
+
+    <table style="width:100%;">
+      <tr>
+        <th>Quantity</th>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Price</th>
+        <th>Item Total</th>
+        <th>Remove</th>
+      </tr>
+      <tr id="item-1-row" hidden>
+        <td><p id="item-1-qty"></p></td>
+        <td><p id="item-1-name"></p></td>
+        <td><p id="item-1-id"></p></td>
+        <td><p id="item-1-price"></p></td>
+        <td><p id="item-1-total"></p></td>
+        <td><button id="item-1-ri">Remove</button></td>
+      </tr>
+      <tr id="item-2-row" hidden>
+        <td><p id="item-2-qty"></p></td>
+        <td><p id="item-2-name"></p></td>
+        <td><p id="item-2-id"></p></td>
+        <td><p id="item-2-price"></p></td>
+        <td><p id="item-2-total"></p></td>
+        <td><button id="item-2-ri">Remove</button></td>
+      </tr>
+      <tr id="item-3-row" hidden>
+        <td><p id="item-3-qty"></p></td>
+        <td><p id="item-3-name"></p></td>
+        <td><p id="item-3-id"></p></td>
+        <td><p id="item-3-price"></p></td>
+        <td><p id="item-3-total"></p></td>
+        <td><button id="item-3-ri">Remove</button></td>
+      </tr>
+      <tr id="item-4-row" hidden>
+        <td><p id="item-4-qty"></p></td>
+        <td><p id="item-4-name"></p></td>
+        <td><p id="item-4-id"></p></td>
+        <td><p id="item-4-price"></p></td>
+        <td><p id="item-4-total"></p></td>
+        <td><button id="item-4-ri">Remove</button></td>
+      </tr>
+    </table>
+
+    
+    <div class="summary-box">
+      <p>Must add all 4 items to cart for summary to show.</p>
+      <pre id="summary" hidden></pre>
+    </div>
+    
+
+    <!-- BASIC ACTIONS -->
+    <div class="actions">
+      <button id="clearBtn">Clear Cart</button>
+      <a href="shop.html">Keep Shopping</a>
+    </div>
+
+    </div>
+  </main>
+
+  <script>
+  /* =================== PIPE FROM shop.html (leave as-is) =================== */
+  // shop.html must write items with: data-id, data-name, data-price, data-image
+  // addToCart(btn) should push objects { id, name, unitPrice, qty, image } to localStorage
+
+  const CART_KEY = 'museumCartV1'; // MUST match shop.html
+
+  function readCart(){
+    try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+    catch { return []; }
+  }
+  function writeCart(cart){
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+  /* ================= END PIPE ============================================= */
+
+
+  /* ====================== UTILITIES & CONSTANTS =========================== */
+  // Currency with parentheses for negatives
+  function money(n){
+    const sign = n < 0 ? -1 : 1;
+    const s = '$' + Math.abs(n).toFixed(2);
+    return sign < 0 ? '('+s+')' : s;
+  }
+
+  // Spec constants
+  const TAX_RATE = 0.102;
+  const MEMBER_DISCOUNT_RATE = 0.15;
+  const SHIPPING_RATE = 25.00;
+  const VOLUME_TIERS = [
+    [0.00, 49.99, 0.00],
+    [50.00, 99.99, 0.05],
+    [100.00, 199.99, 0.10],
+    [200.00, Infinity, 0.15]
+  ];
+
+  // Return the volume discount rate given an item total
+  function volumeRate(total){
+    for (const [min,max,rate] of VOLUME_TIERS){
+      if (total >= min && total <= max) return rate;
+    }
+    return 0;
+  }
+
+  // Remove a line item entirely (qty=0 => drop row)
+  function removeItem(id){
+    const next = readCart().filter(it => it.id !== id);
+    writeCart(next);
+    render();
+  }
+
+  // Clear cart = initial state (cart empty, member unchecked)
+  function clearCart(){
+    writeCart([]);
+    document.getElementById('memberToggle').checked = false;
+    render();
+  }
+  /* ================== END UTILITIES & CONSTANTS =========================== */
+
+
+  /* ====================== STUDENT WORK STARTS HERE =========================
+     IMPLEMENT render() to mirror the commission assignment:
+
+     1) Load cart from readCart(); keep only items with qty > 0 and unitPrice > 0
+     2) If empty → show #emptyMsg and hide #items and #summary
+     3) Build a text-only list in #items:
+           Example line: "2 × Celestial Inkstone               $29.90"
+           Include a small Remove button per line that calls removeItem(id)
+     4) Math (single-discount rule):
+           ItemTotal = sum(unitPrice * qty)
+           If Member checked AND Volume tier would apply → PROMPT user to choose:
+             "Only one discount may be applied. Type 'M' for Member or 'V' for Volume:"
+             Apply only the chosen one; set the other to $0.00
+           Else apply Member OR Volume (not both)
+           Subtotal = ItemTotal − AppliedDiscount + SHIPPING_RATE
+           TaxAmount = Subtotal * TAX_RATE
+           InvoiceTotal = Subtotal + TaxAmount
+     5) Write a single summary block to #summary (like commission):
+           Subtotal of Items
+           Volume Discount
+           Member Discount
+           Shipping
+           Subtotal (Taxable)
+           Tax Rate %   (as a percentage text)
+           Tax Amount $ (as currency)
+           Invoice Total
+     6) Recompute (call render()) after:
+           - Member checkbox change
+           - Clear Cart
+           - Remove line item
+
+     KEEP IT SIMPLE: text output only, one render pass.
+  ========================================================================= */
+
+  function render(){
+    let cart = readCart();
+
+    const item_1_row    = document.getElementById('item-1-row');
+    const item_1_qty    = document.getElementById('item-1-qty');
+    const item_1_name   = document.getElementById('item-1-name');
+    const item_1_price  = document.getElementById('item-1-price');
+    const item_1_total  = document.getElementById('item-1-total');
+    const item_1_id     = document.getElementById('item-1-id');
+    const item_1_remove = document.getElementById('item-1-ri'); // this line aided by chatgpt
+
+    const item_2_row   = document.getElementById('item-2-row');
+    const item_2_qty   = document.getElementById('item-2-qty');
+    const item_2_name  = document.getElementById('item-2-name');
+    const item_2_price = document.getElementById('item-2-price');
+    const item_2_total = document.getElementById('item-2-total');
+    const item_2_id    = document.getElementById('item-2-id');
+    const item_2_remove = document.getElementById('item-2-ri'); // this line aided by chatgpt
+
+    const item_3_row   = document.getElementById('item-3-row');
+    const item_3_qty   = document.getElementById('item-3-qty');
+    const item_3_name  = document.getElementById('item-3-name');
+    const item_3_price = document.getElementById('item-3-price');
+    const item_3_total = document.getElementById('item-3-total');
+    const item_3_id    = document.getElementById('item-3-id');
+    const item_3_remove = document.getElementById('item-3-ri'); // this line aided by chatgpt
+
+    const item_4_row   = document.getElementById('item-4-row');
+    const item_4_qty   = document.getElementById('item-4-qty');
+    const item_4_name  = document.getElementById('item-4-name');
+    const item_4_price = document.getElementById('item-4-price');
+    const item_4_total = document.getElementById('item-4-total');
+    const item_4_id    = document.getElementById('item-4-id');
+    const item_4_remove = document.getElementById('item-4-ri'); // this line aided by chatgpt
+
+    const summaryPre = document.getElementById('summary');
+    const emptyMsg   = document.getElementById('emptyMsg');
+    const isMember   = document.getElementById('memberToggle').checked;
+
+// TODO: STUDENT IMPLEMENTATION
+
+//     summaryPre.textContent =
+// `TODO: Implement render() per the assignment spec.
+
+// Steps:
+// 1) Load cart from localStorage (readCart)
+// 2) If empty → show 'Your cart is empty.'
+// 3) Build text list of items with Remove buttons 
+// 4) Compute totals with exactly one discount (prompt if both apply)
+// 5) Output a single summary block (commission-style)`;
+
+// ============== my code in render definition ====================
+
+emptyMsg.hidden = false;
+if (cart[0].qty > 0 ||
+    cart[1].qty > 0 ||
+    cart[2].qty > 0 ||
+    cart[3].qty > 0 ) {
+  emptyMsg.hidden = true;
+  summaryPre.hidden = false;
+}
+
+// item 1 - actual item will vary
+item_1_row.hidden = true;
+if (cart[0].qty == 0) {
+  item_1_row.hidden = true;
+}
+else if (cart[0].qty > 0){
+  item_1_row.hidden = false;
+}
+else {
+  item_1_row.hidden = false;
+}
+item_1_qty.textContent   = cart[0].qty;
+item_1_name.textContent  = cart[0].name;
+item_1_id.textContent    = cart[0].id;
+item_1_price.textContent = money(cart[0].unitPrice);
+item_1_total.textContent = money((cart[0].unitPrice * cart[0].qty));
+
+// remove item button - chatgpt helped me here
+item_1_remove.addEventListener("click", () => {
+  removeItem(item_1_id.textContent);
+});
+
+
+
+// item 2 - actual item will vary
+item_2_row.hidden = true;
+if (cart[1].qty == 0) {
+  item_2_row.hidden = true;
+}
+else if (cart[1].qty > 0){
+  item_2_row.hidden = false;
+}
+else {
+  item_2_row.hidden = false;
+}
+item_2_qty.textContent   = cart[1].qty;
+item_2_name.textContent  = cart[1].name;
+item_2_id.textContent    = cart[1].id;
+item_2_price.textContent = money(cart[1].unitPrice);
+item_2_total.textContent = money((cart[1].unitPrice * cart[1].qty));
+
+// remove item button - chatgpt helped me here
+item_2_remove.addEventListener("click", () => {
+  removeItem(item_2_id.textContent);
+});
+
+
+
+// item 3 - actual item will vary
+item_3_row.hidden = true;
+if (cart[2].qty == 0) {
+  item_3_row.hidden = true;
+}
+else if (cart[2].qty > 0){
+  item_3_row.hidden = false;
+}
+else {
+  item_3_row.hidden = false;
+}
+item_3_qty.textContent   = cart[2].qty;
+item_3_name.textContent  = cart[2].name;
+item_3_id.textContent    = cart[2].id;
+item_3_price.textContent = money(cart[2].unitPrice);
+item_3_total.textContent = money((cart[2].unitPrice * cart[2].qty));
+
+// remove item button - chatgpt helped me here
+item_3_remove.addEventListener("click", () => {
+  removeItem(item_3_id.textContent);
+});
+
+
+// item 4 - actual item will vary
+item_4_row.hidden = true;
+if (cart[3].qty == 0) {
+  item_4_row.hidden = true;
+}
+else if (cart[3].qty > 0){
+  item_4_row.hidden = false;
+}
+else {
+  item_4_row.hidden = false;
+}
+item_4_qty.textContent   = cart[3].qty;
+item_4_name.textContent  = cart[3].name;
+item_4_id.textContent    = cart[3].id;
+item_4_price.textContent = money(cart[3].unitPrice);
+item_4_total.textContent = money((cart[3].unitPrice * cart[3].qty));
+
+// remove item button - chatgpt helped me here
+item_4_remove.addEventListener("click", () => {
+  removeItem(item_4_id.textContent);
+});
+
+// summary
+// only works with all 4 products in cart
+let itemSubTotal = ((cart[0].unitPrice * cart[0].qty) +
+                   (cart[1].unitPrice * cart[1].qty) +
+                   (cart[2].unitPrice * cart[2].qty) +
+                   (cart[3].unitPrice * cart[3].qty));
+
+let volumeDiscount = -((volumeRate(itemSubTotal))*itemSubTotal);
+
+let memberDiscount = 0;
+
+if (isMember) {
+  memberDiscount = -(MEMBER_DISCOUNT_RATE*itemSubTotal);
+}
+
+let discountChoice = '';
+if (memberDiscount < 0 && volumeDiscount < 0) {
+  discountChoice=prompt("Both member and volume discounts are applied. Choose only one by entering capital M or V:");
+  if (discountChoice == "M") {
+    volumeDiscount = 0;
+  }
+  else if (discountChoice == "V") {
+    memberDiscount = 0;
+  }
+  else {
+    volumeDiscount = 0;
+  }
+}
+
+let shippingTotal = SHIPPING_RATE;
+
+let taxableSubTotal = ((itemSubTotal + volumeDiscount + memberDiscount) + shippingTotal);
+
+let taxRateDisplayed = (TAX_RATE*100).toFixed(2); // dont use for math
+
+let taxAmount = (TAX_RATE*taxableSubTotal);
+
+let invoiceTotal = (taxableSubTotal+taxAmount);
+
+summaryPre.textContent =
+`Here is your cart summary:
+Items Subtotal:             ${money(itemSubTotal)}
+Volume Discount:            ${money(volumeDiscount)}
+Member Discount:            ${money(memberDiscount)}
+Shipping:                   ${money(shippingTotal)}
+Subtotal (taxable):         ${money(taxableSubTotal)}
+Tax Rate:                   ${taxRateDisplayed}%
+Tax Ammount:                ${money(taxAmount)}
+Invoice Total:              ${money(invoiceTotal)}`;
+
+} // end of render()
+
+  // Events → re-render
+  document.getElementById('memberToggle').addEventListener('change', render);
+  document.getElementById('clearBtn').addEventListener('click', clearCart);
+
+  // First paint
+  render();
+  </script>
+</body>
+</html>
